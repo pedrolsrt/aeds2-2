@@ -31,6 +31,10 @@ import java.util.function.Predicate;
  *   Consumer<E> acao               ->  p -> System.out.println(p)
  *
  *  "quantidade" maior que o tamanho? -> usa o tamanho todo (não dá erro).
+ *
+ *  ONDE ESTÁ CADA TAREFA (procure com Ctrl+F por "TAREFA"):
+ *   Pilhas T2 -> Pilha.subPilha            Filas T1 -> Fila.calcularValorMedio
+ *   Filas  T2 -> Fila.filtrar              (T0/T1/T3 do sistema -> Comercio.java)
  * =====================================================================
  */
 
@@ -93,6 +97,7 @@ class Pilha<E> {
     }
 
     /**
+     * >>> OFICINA PILHAS – TAREFA 2 <<<
      * SUBPILHA: nova pilha com os numItens elementos do TOPO, na mesma ordem
      * (o topo continua no topo). A pilha original NÃO muda.
      * Quando usar: "os N pedidos mais recentes".
@@ -225,6 +230,7 @@ class Fila<E> {
     }
 
     /**
+     * >>> OFICINA FILAS – TAREFA 1 <<<
      * CALCULAR VALOR MÉDIO de um atributo dos N PRIMEIROS da fila.
      * Ex.: fila.calcularValorMedio(Pedido::valorFinal, 5)  -> média dos 5 primeiros pedidos
      * A fila original NÃO muda.
@@ -237,6 +243,7 @@ class Fila<E> {
     }
 
     /**
+     * >>> OFICINA FILAS – TAREFA 2 <<<
      * FILTRAR: nova fila com os elementos, dentre os N PRIMEIROS, que passam no teste
      * (mantém a ordem de chegada). A fila original NÃO muda.
      * Ex.: fila.filtrar(p -> p.valorFinal() > 100, 10)

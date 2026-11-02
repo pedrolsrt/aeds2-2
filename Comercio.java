@@ -142,7 +142,8 @@ public class Comercio {
     }
 
     /**
-     * FINALIZAR PEDIDO (Tarefa 1 de Pilhas + Tarefa 0 de Filas)
+     * >>> OFICINA PILHAS – TAREFA 1  +  OFICINA FILAS – TAREFA 0 <<<
+     * FINALIZAR PEDIDO
      * Guarda nas duas estruturas:
      *   PILHA -> pra achar os mais RECENTES
      *   FILA  -> pra manter a ordem de CHEGADA
@@ -161,7 +162,8 @@ public class Comercio {
     }
 
     /**
-     * LISTAR PRODUTOS DOS PEDIDOS MAIS RECENTES (Tarefa 3 de Pilhas)
+     * >>> OFICINA PILHAS – TAREFA 3 <<<
+     * LISTAR PRODUTOS DOS PEDIDOS MAIS RECENTES
      * subPilha(n) pega os n do topo = n mais recentes.
      */
     static void listarProdutosPedidosRecentes() {
@@ -176,7 +178,7 @@ public class Comercio {
         }
     }
 
-    /** VALOR TOTAL MÉDIO DOS N PRIMEIROS PEDIDOS (Tarefa 3 de Filas) */
+    /** >>> OFICINA FILAS – TAREFA 3 (opção a) <<<  VALOR TOTAL MÉDIO DOS N PRIMEIROS PEDIDOS */
     static void exibirValorMedioPrimeirosPedidos() {
         int n = lerInt("Quantos primeiros pedidos? ");
         double media = filaPedidos.calcularValorMedio(Pedido::valorFinal, n);
@@ -184,7 +186,7 @@ public class Comercio {
                 Math.min(n, filaPedidos.tamanho()), media);
     }
 
-    /** PRIMEIROS PEDIDOS COM VALOR TOTAL ACIMA DE X (Tarefa 3 de Filas) */
+    /** >>> OFICINA FILAS – TAREFA 3 (opção b) <<<  PRIMEIROS PEDIDOS COM VALOR TOTAL ACIMA DE X */
     static void exibirPedidosAcimaDeValor() {
         int n = lerInt("Quantos primeiros pedidos analisar? ");
         double valor = lerDouble("Valor minimo (R$): ");
@@ -192,7 +194,7 @@ public class Comercio {
         mostrarResultado(resultado, "com valor total acima de R$ " + String.format("%.2f", valor));
     }
 
-    /** PRIMEIROS PEDIDOS QUE APRESENTAM UM PRODUTO (Tarefa 3 de Filas) */
+    /** >>> OFICINA FILAS – TAREFA 3 (opção c) <<<  PRIMEIROS PEDIDOS QUE APRESENTAM UM PRODUTO */
     static void exibirPedidosComProduto() {
         int n = lerInt("Quantos primeiros pedidos analisar? ");
         Produto produto = buscarProdutoPorDescricao(lerTexto("Descricao do produto: "));
